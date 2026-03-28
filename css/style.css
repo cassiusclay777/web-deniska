@@ -325,7 +325,7 @@ p:last-child {
 
 @media (min-width: 900px) {
   .hero-grid {
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: 0.9fr 1.1fr;
     gap: 3rem;
   }
 }
@@ -445,10 +445,21 @@ p:last-child {
   color: var(--accent-dark);
 }
 
+/* Wrapper fotky — fotka vyplní plochu (cover), bez béžových okrajů od contain */
+#hero-visual {
+  position: relative;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
 .hero-visual {
   position: relative;
-  justify-self: center;
-  width: min(100%, 420px);
+  justify-self: stretch;
+  width: 100%;
   animation: heroIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s backwards;
 }
 
@@ -458,26 +469,35 @@ p:last-child {
   }
 }
 
+/* Obal s pevným poměrem stran — výška pro height:100% u img při cover */
 .hero-frame {
   position: relative;
-  display: grid;
-  place-items: stretch;
+  width: 100%;
   aspect-ratio: 4 / 5;
-  border-radius: 1rem;
-  background: var(--bg);
-  box-shadow: var(--shadow);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
   overflow: hidden;
 }
 
+#hero-visual img,
 .hero-frame .hero-portrait {
   width: 100%;
   height: 100%;
   max-width: none;
-  min-width: 0;
-  min-height: 0;
-  object-fit: contain;
-  object-position: center center;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: cover;
+  object-position: center 38%;
+  transform: rotate(360deg) scaleX(-1);
+  transform-origin: center center;
+  filter: contrast(1.05) saturate(1.1) brightness(1.02);
+  transition: filter 0.4s ease, object-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-visual:hover .hero-portrait {
+  filter: contrast(1.08) saturate(1.15) brightness(1.04);
+  object-position: center 46%;
 }
 
 .decor-line {
