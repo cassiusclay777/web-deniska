@@ -1,0 +1,14 @@
+{
+  "name": "denisa-bukovcanova-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Statický web — výživové poradenství (HTML/CSS/JS)",
+  "scripts": {
+    "dev": "serve . -l 5173",
+    "start": "npm run dev",
+    "preview": "npm run dev"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
