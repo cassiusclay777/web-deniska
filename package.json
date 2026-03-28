@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "serve . -l 5173",
     "start": "npm run dev",
-    "preview": "npm run dev"
+    "preview": "npm run dev",
+    "process-photo": "python scripts/process_hero_photo.py"
   },
   "devDependencies": {
     "serve": "^14.2.4"
