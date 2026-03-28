@@ -1,4 +1,15 @@
 (function () {
+  var form = document.getElementById("contact-form");
+  if (form && typeof URL !== "undefined") {
+    try {
+      var next = document.createElement("input");
+      next.type = "hidden";
+      next.name = "_next";
+      next.value = new URL("thank-you.html", window.location.href).href;
+      form.appendChild(next);
+    } catch (e) {}
+  }
+
   var nav = document.getElementById("nav");
   var toggle = document.getElementById("nav-toggle");
   var links = nav ? nav.querySelectorAll("a[href^='#']") : [];
