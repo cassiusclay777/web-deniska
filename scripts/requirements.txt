@@ -1,2 +1,0 @@
-# Pro scripts/process_hero_photo.py (lokálně: pip install -r scripts/requirements.txt)
-Pillow>=10.0.0

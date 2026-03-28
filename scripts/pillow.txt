@@ -1,0 +1,2 @@
+# Lokální skript process_hero_photo.py: pip install -r scripts/pillow.txt
+Pillow>=10.0.0

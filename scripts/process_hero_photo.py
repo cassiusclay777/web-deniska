@@ -2,7 +2,7 @@
 Úprava hero fotky: ořez vlevo, důraz na horní část těla, jemné zesvětlení.
 Záloha: foto1-original.webp (při prvním běhu se přejmenuje původní foto1.webp).
 
-Spuštění z kořene projektu: pip install -r scripts/requirements.txt && python scripts/process_hero_photo.py
+Spuštění z kořene projektu: pip install -r scripts/pillow.txt && python scripts/process_hero_photo.py
 """
 from __future__ import annotations
 

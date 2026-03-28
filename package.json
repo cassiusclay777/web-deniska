@@ -2,8 +2,9 @@
   "name": "denisa-bukovcanova-web",
   "version": "1.0.0",
   "private": true,
-  "description": "Statický web — výživové poradenství (HTML/CSS/JS). Lokální skript na fotku: pip install -r scripts/requirements.txt && npm run process-photo",
+  "description": "Statický web — výživové poradenství (HTML/CSS/JS). Lokální úprava fotky: pip install -r scripts/pillow.txt && npm run process-photo",
   "scripts": {
+    "build": "node -e \"require('fs').accessSync('index.html'); console.log('static')\"",
     "dev": "serve . -l 5173",
     "start": "npm run dev",
     "preview": "npm run dev",
