@@ -4,7 +4,7 @@
   "private": true,
   "description": "Statický web — výživové poradenství (HTML/CSS/JS). Lokální úprava fotky: pip install -r scripts/pillow.txt && npm run process-photo",
   "scripts": {
-    "build": "node -e \"require('fs').accessSync('index.html'); console.log('static')\"",
+    "build": "node scripts/sync-public.js",
     "dev": "serve . -l 5173",
     "start": "npm run dev",
     "preview": "npm run dev",
