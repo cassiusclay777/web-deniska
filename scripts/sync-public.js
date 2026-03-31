@@ -15,6 +15,7 @@ const skipDirs = new Set([
   ".vercel",
   "scripts",
   ".vscode",
+  "denisa_site",
 ]);
 
 const skipFiles = new Set([

@@ -1,4 +1,6 @@
 node_modules/
+# Zbytky po Flutter migraci (smaž ručně po zavření Dart/IDE, pokud složka ještě existuje)
+denisa_site/
 .DS_Store
 Thumbs.db
 .vercel
