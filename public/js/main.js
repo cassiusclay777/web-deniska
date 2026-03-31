@@ -83,10 +83,9 @@
         ) {
           return;
         }
-        var delay = index % 4;
-        if (delay > 0) {
-          el.classList.add("reveal-delay-" + delay);
-        }
+        if (index === 0) return;
+        var delay = ((index - 1) % 3) + 1;
+        el.classList.add("reveal-delay-" + delay);
       });
     });
   });

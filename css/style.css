@@ -696,7 +696,7 @@ p:last-child {
     transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   filter: blur(2px);
-  will-change: opacity, transform;
+  will-change: opacity, transform, filter;
 }
 
 .reveal.is-visible {
