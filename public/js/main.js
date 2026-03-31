@@ -56,6 +56,41 @@
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  var autoRevealSelectors = [
+    ".program-card",
+    ".testimonial-card",
+    ".article-card",
+    ".faq-item",
+    ".contact-card",
+  ];
+  autoRevealSelectors.forEach(function (selector) {
+    document.querySelectorAll(selector).forEach(function (el) {
+      if (!el.classList.contains("reveal")) {
+        el.classList.add("reveal");
+      }
+    });
+  });
+
+  var staggerGroups = [".programs", ".testimonials-carousel", ".articles", ".faq-grid", ".contact-layout"];
+  staggerGroups.forEach(function (groupSelector) {
+    document.querySelectorAll(groupSelector).forEach(function (group) {
+      var revealItems = group.querySelectorAll(".reveal");
+      revealItems.forEach(function (el, index) {
+        if (
+          el.classList.contains("reveal-delay-1") ||
+          el.classList.contains("reveal-delay-2") ||
+          el.classList.contains("reveal-delay-3")
+        ) {
+          return;
+        }
+        var delay = index % 4;
+        if (delay > 0) {
+          el.classList.add("reveal-delay-" + delay);
+        }
+      });
+    });
+  });
+
   if (!prefersReduced) {
     var revealEls = document.querySelectorAll(".reveal");
     if (revealEls.length && "IntersectionObserver" in window) {

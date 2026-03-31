@@ -473,6 +473,25 @@ p:last-child {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .hero-actions {
+    gap: 0.6rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .btn--primary {
+    box-shadow: 0 9px 20px rgba(201, 123, 137, 0.28);
+  }
+
+  .btn--primary:active {
+    transform: translateY(1px) scale(0.985);
+    box-shadow: 0 6px 14px rgba(201, 123, 137, 0.24);
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -496,15 +515,37 @@ p:last-child {
 }
 
 .btn--primary {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: var(--accent);
   color: var(--white);
   box-shadow: 0 8px 18px rgba(216, 147, 159, 0.28);
+}
+
+.btn--primary::after {
+  content: "";
+  position: absolute;
+  inset: 8% 10%;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.36), transparent 68%);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.25s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .btn--primary:hover {
   background: var(--accent-hover);
   color: var(--white);
   box-shadow: 0 10px 22px rgba(201, 123, 137, 0.26);
+}
+
+.btn--primary:hover::after,
+.btn--primary:focus-visible::after {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .btn--ghost {
@@ -650,14 +691,18 @@ p:last-child {
 /* Reveal animation */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(16px) scale(0.985);
   transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: blur(2px);
+  will-change: opacity, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+  filter: blur(0);
 }
 
 .reveal-delay-1 {
@@ -760,6 +805,26 @@ p:last-child {
 .program-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 26px rgba(52, 43, 42, 0.08);
+}
+
+.program-card:active,
+.testimonial-card:active,
+.article-card:active {
+  transform: translateY(-1px) scale(0.996);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .program-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(52, 43, 42, 0.1);
+  }
+
+  .testimonial-card:hover,
+  .article-card:hover,
+  .contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(52, 43, 42, 0.09);
+  }
 }
 
 .program-card--featured {
@@ -1143,6 +1208,7 @@ p:last-child {
   flex-direction: column;
   min-height: 100%;
   box-shadow: 0 10px 20px rgba(52, 43, 42, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 @media (min-width: 700px) {
@@ -1242,6 +1308,7 @@ p:last-child {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .article-card h3 {
@@ -1285,6 +1352,7 @@ p:last-child {
   border-radius: 16px;
   padding: clamp(1.5rem, 3vw, 2rem);
   box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .contact-card--elevated {
