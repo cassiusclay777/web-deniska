@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Admin Login - Denisa Bukovčanová">
+  <main class="section">
+    <div class="wrap">
+      <div class="contact-card contact-card--elevated" style="max-width: 400px; margin: 0 auto;">
+        <h2 class="contact-card-title">Admin přihlášení</h2>
+        <form class="contact-form" method="POST" action="/api/admin/login">
+          <div class="form-row">
+            <label for="username">Uživatelské jméno</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              required
+              placeholder="admin"
+            />
+          </div>
+          <div class="form-row">
+            <label for="password">Heslo</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              required
+              placeholder="••••••••"
+            />
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Přihlásit se</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

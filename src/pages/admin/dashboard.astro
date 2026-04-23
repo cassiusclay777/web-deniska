@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// TODO: Add authentication check
+---
+
+<BaseLayout title="Admin Dashboard - Denisa Bukovčanová">
+  <main class="section">
+    <div class="wrap">
+      <h1>Admin Dashboard</h1>
+      <p>Správa obsahu webu Denisy Bukovčanové</p>
+      
+      <div class="admin-grid" style="display: grid; gap: 2rem; margin-top: 3rem;">
+        <div class="admin-card contact-card">
+          <h3 class="contact-card-title">Správa článků</h3>
+          <p>Přidávejte, upravujte a mažte články na blogu.</p>
+          <a href="/admin/articles" class="btn btn--primary">Spravovat články</a>
+        </div>
+        
+        <div class="admin-card contact-card">
+          <h3 class="contact-card-title">Správa referencí</h3>
+          <p>Přidávejte a upravujte reference klientů.</p>
+          <a href="/admin/testimonials" class="btn btn--primary">Spravovat reference</a>
+        </div>
+        
+        <div class="admin-card contact-card">
+          <h3 class="contact-card-title">Správa služeb</h3>
+          <p>Upravujte ceny a popisy služeb.</p>
+          <a href="/admin/services" class="btn btn--primary">Spravovat služby</a>
+        </div>
+        
+        <div class="admin-card contact-card">
+          <h3 class="contact-card-title">Nastavení webu</h3>
+          <p>Základní nastavení a SEO.</p>
+          <a href="/admin/settings" class="btn btn--primary">Nastavení</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

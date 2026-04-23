@@ -1,0 +1,6 @@
+{
+  "code-runner.executorMap": {
+    "swift": "cd $workspaceRoot && swift run MyCLI"
+  },
+  "code-runner.runInTerminal": true
+}

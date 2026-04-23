@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Github-projekty/web-deniska"
+		}
+	],
+	"settings": {},
+	"launch": {
+		"configurations": [
+			{
+				"type": "swift",
+				"request": "launch",
+				"args": [],
+				"cwd": "${workspaceFolder:my-astro-project}",
+				"name": "Debug MyCLI (my-astro-project)",
+				"target": "MyCLI",
+				"configuration": "debug",
+				"preLaunchTask": "swift: Build Debug MyCLI (my-astro-project)"
+			},
+			{
+				"type": "swift",
+				"request": "launch",
+				"args": [],
+				"cwd": "${workspaceFolder:my-astro-project}",
+				"name": "Release MyCLI (my-astro-project)",
+				"target": "MyCLI",
+				"configuration": "release",
+				"preLaunchTask": "swift: Build Release MyCLI (my-astro-project)"
+			}
+		]
+	}
+}

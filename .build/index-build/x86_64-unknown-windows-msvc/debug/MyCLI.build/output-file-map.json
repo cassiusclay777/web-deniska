@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "C:\\Users\\Patri\\Documents\\my-astro-project\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\MyCLI.build\\primary.swiftdeps"
+  },
+  "C:\\Users\\Patri\\Documents\\my-astro-project\\MyCLI\\main.swift": {
+    "dependencies": "C:\\Users\\Patri\\Documents\\my-astro-project\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\MyCLI.build\\main.d",
+    "object": "C:\\Users\\Patri\\Documents\\my-astro-project\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\MyCLI.build\\main.swift.o",
+    "swiftmodule": "C:\\Users\\Patri\\Documents\\my-astro-project\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\MyCLI.build\\main~partial.swiftmodule",
+    "swift-dependencies": "C:\\Users\\Patri\\Documents\\my-astro-project\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\MyCLI.build\\main.swiftdeps",
+    "diagnostics": "C:\\Users\\Patri\\Documents\\my-astro-project\\.build\\index-build\\x86_64-unknown-windows-msvc\\debug\\MyCLI.build\\main.dia"
+  }
+}

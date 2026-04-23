@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import ProcessSection from "../components/ProcessSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
+import PersonasSection from "../components/PersonasSection.astro";
+import ArticlesSection from "../components/ArticlesSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+---
+
+<BaseLayout
+  title="Denisa Bukovčanová — výživové poradenství a zdravé stravování"
+  description="Výživové poradenství pro ženy 30–50 let: hubnutí bez jojo efektu a extrémů. Online i osobně u Znojma. Nutri Academy, empatický přístup."
+>
+  <HeroSection />
+  <ServicesSection />
+  <ProcessSection />
+  <AboutSection />
+  <TestimonialsSection />
+  <PersonasSection />
+  <ArticlesSection />
+  <ContactSection />
+
+  <!-- Disclaimer + GDPR -->
+  <section class="section section--legal" id="duvera" aria-labelledby="legal-heading">
+    <div class="wrap legal">
+      <h2 class="visually-hidden" id="legal-heading">Důležité informace</h2>
+      <div class="legal-block" id="disclaimer">
+        <h3>Zdravotní upozornění</h3>
+        <p>
+          Výživové poradenství neslouží k diagnostice ani léčbě nemocí a nenahrazuje péči
+          lékaře či klinického výživového specialisty. Při akutních potížích nebo při užívání
+          léků se vždy řiďte doporučením ošetřujícího lékaře.
+        </p>
+      </div>
+      <div class="legal-block" id="gdpr">
+        <h3>Osobní údaje</h3>
+        <p>
+          Údaje z formuláře zpracovávám pouze za účelem odpovědi na váš dotaz nebo domluvy
+          konzultace; neposílám newsletter bez vašeho výslovného souhlasu. Máte právo na přístup
+          k údajům nebo výmaz — napište na výše uvedený e-mail.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,106 @@
+---
+// Contact section component
+---
+
+<!-- 7. Kontakt -->
+<section class="section section--band section--band-white" id="kontakt" aria-labelledby="kontakt-heading">
+  <div class="wrap">
+    <header class="section-head section-head--center reveal">
+      <p class="section-label">Kontakt</p>
+      <h2 id="kontakt-heading">Napište mi</h2>
+      <p class="section-subtitle">
+        Objednejte konzultaci nebo se jen zeptejte — odpovím obvykle do 24 hodin (všední dny).
+      </p>
+    </header>
+    <p class="section-intro section-intro--center reveal reveal-delay-1">
+      Konzultace <strong>online</strong> i <strong>osobně</strong> v okolí <strong>Znojma</strong>.
+      Při spěchu to prosím napište do zprávy.
+    </p>
+    <div class="contact-layout reveal reveal-delay-2">
+      <div class="contact-card contact-card--elevated">
+        <h3 class="contact-card-title">Formulář</h3>
+        <form
+          class="contact-form"
+          id="contact-form"
+          action="https://formsubmit.co/bukovcanova.d@gmail.com"
+          method="post"
+        >
+          <input type="hidden" name="_subject" value="Zpráva z webu — Denisa Bukovčanová" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-row">
+            <label for="jmeno">Jméno a příjmení</label>
+            <input
+              id="jmeno"
+              name="jmeno"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="např. Jana Nováková"
+            />
+          </div>
+          <div class="form-row">
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="vas@email.cz"
+            />
+          </div>
+          <div class="form-row">
+            <label for="zprava">Zpráva</label>
+            <textarea
+              id="zprava"
+              name="zprava"
+              rows="5"
+              required
+              placeholder="Stručně: s čím chcete pomoct (hubnutí po dietách, únava, sedavá práce…)"
+            ></textarea>
+          </div>
+          <div class="form-row">
+            <label for="cas">Preferovaný čas kontaktu <span class="optional">(volitelné)</span></label>
+            <input id="cas" name="preferovany_cas" type="text" placeholder="např. dopoledne, po 18:00…" autocomplete="off" />
+          </div>
+          <div class="form-row form-row--check">
+            <input id="souhlas" name="souhlas_gdpr" type="checkbox" required value="ano" />
+            <label for="souhlas">
+              Souhlasím se zpracováním údajů kvůli odpovědi — ne k newsletteru bez domluvy.
+              <a class="link-muted" href="#gdpr">Podrobnosti</a>
+            </label>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Odeslat zprávu</button>
+        </form>
+        <p class="form-note">
+          Po odeslání vás přesměruje na krátké potvrzení na webu. Odeslání probíhá přes
+          FormSubmit; pokud něco zlobí, napište přímo na e-mail níže.
+        </p>
+      </div>
+      <div class="contact-aside">
+        <div class="contact-card contact-card--aside">
+          <h3 class="contact-card-title">Přímo</h3>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Jméno</span>
+              Denisa Bukovčanová
+            </li>
+            <li>
+              <span class="contact-label">E-mail</span>
+              <a href="mailto:bukovcanova.d@gmail.com">bukovcanova.d@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-label">Telefon</span>
+              <a href="tel:+420732614742">+420 732 614 742</a>
+            </li>
+            <li>
+              <span class="contact-label">Region</span>
+              Znojmo a okolí · online po celé ČR
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

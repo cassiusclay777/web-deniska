@@ -1,0 +1,142 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Výživové poradenství pro ženy 30–50 let: hubnutí bez jojo efektu a extrémů. Online i osobně u Znojma. Nutri Academy, empatický přístup." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — Denisa Bukovčanová</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/foto1.webp" />
+    <meta name="theme-color" content="#E49AA6" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23e49aa6'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='%23fff8f6' font-size='14' font-family='Georgia,serif'%3ED%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href="/foto1.webp" as="image" type="image/webp" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Přeskočit na obsah</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="/">Denisa Bukovčanová</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav"
+          aria-label="Menu"
+        >
+          <span></span>
+        </button>
+        <nav class="nav" id="nav" aria-label="Hlavní navigace">
+          <ul class="nav-list">
+            <li><a href="/#uvod">Domů</a></li>
+            <li><a href="/#sluzby">Služby</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#postup">Postup</a></li>
+            <li><a href="/#o-mne">O mně</a></li>
+            <li><a href="/#reference">Reference</a></li>
+            <li><a href="/#persony">Pro koho</a></li>
+            <li><a href="/#clanky">Články</a></li>
+            <li><a href="/#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__line">
+        <a href="mailto:bukovcanova.d@gmail.com">bukovcanova.d@gmail.com</a>
+        · <a href="tel:+420732614742">+420 732 614 742</a>
+        · <a href="/#uvod">nahoru</a>
+      </p>
+      <p class="site-footer__human">
+        Spolupráce s respektem a lidsky — ne jako v čekárně. © <span id="y"></span> Denisa Bukovčanová
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      // Mobile navigation toggle
+      (function () {
+        var nav = document.getElementById("nav");
+        var toggle = document.getElementById("nav-toggle");
+        var links = nav ? nav.querySelectorAll("a[href^='#']") : [];
+
+        if (toggle && nav) {
+          toggle.addEventListener("click", function () {
+            var open = nav.classList.toggle("is-open");
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          });
+
+          links.forEach(function (a) {
+            a.addEventListener("click", function () {
+              nav.classList.remove("is-open");
+              toggle.setAttribute("aria-expanded", "false");
+            });
+          });
+        }
+
+        // Scroll reveal animation
+        var prefersReduced =
+          window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!prefersReduced) {
+          var revealEls = document.querySelectorAll(".reveal");
+          if (revealEls.length && "IntersectionObserver" in window) {
+            var io = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    io.unobserve(entry.target);
+                  }
+                });
+              },
+              { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+            );
+            revealEls.forEach(function (el) {
+              io.observe(el);
+            });
+          } else {
+            revealEls.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+          }
+        } else {
+          document.querySelectorAll(".reveal").forEach(function (el) {
+            el.classList.add("is-visible");
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

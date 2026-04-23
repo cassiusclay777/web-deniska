@@ -1,0 +1,26 @@
+name: DeepSeek
+version: 1.0.0
+schema: v1
+
+# DeepSeek v Continue — https://docs.continue.dev/customize/model-providers/more/deepseek
+#
+# Klíč z https://platform.deepseek.com → v Continue: Secrets → DEEPSEEK_API_KEY
+# (nebo nastav proměnnou prostředí a použij zápis níže u apiKey)
+
+models:
+  - name: DeepSeek Chat
+    provider: deepseek
+    model: deepseek-chat
+    apiKey: ${DEEPSEEK_API_KEY}
+
+  - name: DeepSeek Reasoner
+    provider: deepseek
+    model: deepseek-reasoner
+    apiKey: ${DEEPSEEK_API_KEY}
+
+  # Volitelné: OpenAI-kompatibilní endpoint (kdyby nativní provider nešel)
+  # - name: DeepSeek Chat (OpenAI API)
+  #   provider: openai
+  #   model: deepseek-chat
+  #   apiBase: https://api.deepseek.com/v1
+  #   apiKey: ${DEEPSEEK_API_KEY}
