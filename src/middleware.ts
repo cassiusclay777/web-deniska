@@ -19,12 +19,10 @@ export const onRequest = defineMiddleware((context, next) => {
     const session = context.cookies.get('admin_session')?.value;
     
     if (session !== 'authenticated') {
-      return new Response(null, {
-        status: 302,
-        headers: {
-          'Location': '/admin/login',
-        },
-      });
+      return new Response(
+        `<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=/admin/login"><meta name="robots" content="noindex"></head><body></body></html>`,
+        { status: 200, headers: { 'Content-Type': 'text/html' } }
+      );
     }
   }
   
