@@ -3,3 +3,9 @@ node_modules/
 Thumbs.db
 .vercel
 .env*.local
+
+# Astro generated files
+.astro/
+
+# Swift Package Manager build artifacts
+.build/
