@@ -2,7 +2,11 @@ node_modules/
 .DS_Store
 Thumbs.db
 .vercel
+.env
+.env.*
+!.env.example
 .env*.local
+.continue/agents/.env
 
 # Astro generated files
 .astro/
